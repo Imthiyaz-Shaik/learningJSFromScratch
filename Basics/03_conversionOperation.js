@@ -15,7 +15,30 @@ let name =0
 
 let changedName=Boolean(name)
 console.log(changedName)
+console.log('****************************')
 
 //1 => true; 0 => false
 //'imthiyaz' => true
 // '' => false
+
+//****************OPERATIONS********* */
+
+console.log('1'+2)
+console.log(1+'2')
+console.log('1'+2+2)
+console.log(1+2+'2')
+console.log(Number('2')+1)  //3
+console.log(+true)
+
+let counter=100;
+const counting=counter++
+console.log(counting)
+console.log(counter)
+console.log('********************')
+
+let count=100;
+const trial= ++count
+console.log(count)
+console.log(trial)
+
+//website to study......tc39.es
