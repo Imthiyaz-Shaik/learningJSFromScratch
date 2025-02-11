@@ -61,3 +61,19 @@ const user = {
    //Output:[ 'Imthiyaz', 24, 'Full-Stack Developer' ]
 
    console.log(Object.entries(user)) //gives output of an array of every key and pair as array inside it....
+
+  const course ={
+    courseName : 'javaScript',
+    price : "999",
+    courseInstructor : 'hitesh sir'
+  }
+
+  //DESTRUCTURING THE OBJECT
+
+  const {courseInstructor} = course
+  console.log(courseInstructor)  
+  // you dont need to write it like course.courseInstructor
+
+  const {courseName : domain} = course 
+  //we just changed the courseName as 'domain' by using this syntax
+  console.log(domain)
