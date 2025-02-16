@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>DOM LEARNING </title>
+</head>
+<body>
+    <div class="parent">
+        <div class ='child'>monday</div>
+        <div class ='child'>tuesday</div>
+        <div class ='child'>wednesday</div>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent')
+        console.log(parent.children)
+       
+      for (let index = 0; index < parent.children.length; index++) {
+        const element = parent.children[index];
+        console.log(element)
+      }
+
+      console.log('accessing parent element through child')
+      const child = document.querySelector('.child')
+      console.log(child.parentElement)
+
+      //CHILD NODES
+
+      //SYNTAX :- let nodeList = parentNode.childNodes;
+      //properties :- .length, .item(index), .forEach(),[index]
+
+        console.log(parent.childNodes.length)
+        console.log(parent.childNodes[2])
+       
+
+      child.parentElement.childNodes.forEach((element,index) => {
+          console.log(element)
+      });
+    </script>
+</body>
+</html>

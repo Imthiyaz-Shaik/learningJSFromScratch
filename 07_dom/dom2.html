@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>dom manipulation.......</title>
+</head>
+<body>
+   
+</body>
+<script>
+     const div =document.createElement('div')
+
+div.className ='main'
+div.id = Math.round(Math.random()*10+1)
+div.setAttribute('title','this is a div element')
+div.innerHTML = '<h1>imthiyaz ahmad shaik</h1>'
+
+        //✅ Pros:
+
+    //Allows embedding of HTML elements dynamically.
+    //Easy to insert formatted text.
+
+        //❌ Cons:
+
+    // Performance Issue: Parses the entire string as HTML, which is slow for frequent updates.
+    // Security Risk: Vulnerable to Cross-Site Scripting (XSS) if user input is used.
+    // DOM Overwrite: Replaces all existing content inside div, causing unnecessary re-rendering.
+
+div.innerText = 'imthiyaz ahmad shaik'     //if you comment it innerHTML gets in H1 tag.
+
+    // ✅ Pros:
+
+    // Safer than innerHTML (prevents HTML injection).
+    // Doesn't parse HTML; treats everything as text.
+    // Faster than innerHTML since it doesn’t re-render the DOM.
+
+    // ❌ Cons:
+
+    // No HTML rendering (e.g., <h1> is displayed as plain text, not a heading).
+    // Still replaces all existing child nodes.
+
+const text = document.createTextNode('imthiyaz ahmad shaik')
+div.appendChild(text)
+
+    //✅ Pros:
+
+    // Most efficient and optimized for adding plain text.
+    // Does not replace existing content (appends instead).
+    // Safer than innerHTML (prevents XSS).
+    // More efficient than innerText for large-scale updates (avoids re-parsing).
+
+    // ❌ Cons:
+
+    // More verbose syntax compared to innerText.
+
+document.body.appendChild(div)
+
+</script>
+</html>
