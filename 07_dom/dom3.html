@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>dom manipulation.....</title>
 </head>
 <body>
-    
+    <ul class="languages">
+       
+    </ul>
+    <ul class="planguages">
+       
+    </ul>
 </body>
+<script>
+   ( function addLang(){
+    const langText = document.querySelector('.languages')
+    const langArr = ['javascript','java','python','ruby rails','php','c++']
+    for (let index = 0; index < langArr.length; index++) {
+        const element =langArr[index];
+        const lang= document.createElement('li')
+      langText.appendChild(lang).innerText=element
+    }
+    })();
+
+    //Same CODE but More OPTIMIZED
+
+    (function addLangAgain(){
+        const langText =document.querySelector('.planguages')
+        const langArr = ['javascript','java','python','ruby rails','php','c++','c#','go','kotlin','swift','dart','rust','typescript']
+        const fragment = document.createDocumentFragment()
+        langArr.forEach(element =>{
+            const lang =document.createElement('li')
+            lang.textContent=element
+            fragment.appendChild(lang)
+        })
+        langText.appendChild(fragment)
+    })()
+</script>
 </html>
