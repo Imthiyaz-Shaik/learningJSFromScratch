@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>CLIPBOARD EVENTS</title>
+</head>
+<body>
+
+    <div class ='tryCopy'> trying to copy this sentence ..lets try</div>
+    <br>
+    <div class="detectCopy"> i  used window.getSelection().toString method to successfully copy this text </div>
+    <br>
+    <div class ='tryCut'> trying to cut this sentence and paste it somewhere....lets try</div>
+    <br>
+    <input type="text" class="tryPaste" placeholder=" TRY Paste something here">
+    <br>
+    <br>
+    <input type="text" class="detectPaste" placeholder="Paste something here">
+
+    <script>
+        const tryCopy = document.querySelector('.tryCopy');
+        tryCopy.addEventListener('copy',function(e){
+            e.preventDefault();
+            alert('tried copying, but failed');
+            const detectCopy = document.querySelector('.detectCopy');
+
+            detectCopy.addEventListener('copy',function(e){
+               const copiedText = window.getSelection().toString(); //get selected text
+               alert(`you copied : ${copiedText}`);
+            });
+
+        const tryCut = document.querySelector('.tryCut');
+        tryCut.addEventListener('cut',function(e){
+            e.preventDefault();
+            alert('tried cutting the text,  but failed');
+
+        const tryPaste = document.querySelector('.tryPaste');
+        tryPaste.addEventListener('paste',function(e){
+            e.preventDefault();
+            alert('tried pasting something here, but failed');
+
+            const detectPaste = document.querySelector('detectPaste');
+            detectPaste.addEventListener('paste',function(e){
+                let pastedText =e.clipboardData.getData('text');
+                alert(`you pasted : ${pastedText}`);
+            })
+        })
+        })
+        })
+    </script>
+</body>
+</html>

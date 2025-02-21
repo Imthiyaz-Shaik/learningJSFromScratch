@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>EVENT BUBBLING</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <div id="parent" style="padding: 20px; background-color: lightblue;">
+        <div class="firstEvent"  style="padding: 10px; background-color: lightgreen;">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+<br>
+    <div id="noEvent" style="padding: 20px; background-color: lightblue;">
+        <div class="noBubble"  style="padding: 10px; background-color: lightgreen;">
+            <button id="checkEBubbling">Click Me</button><pre>      now click here you see event bubbling from here again
+            </pre> 
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("parent").addEventListener("click", function() {
+            alert("Parent Div Clicked!");
+        });
+        document.querySelector('.firstEvent').addEventListener("click", function() {
+            alert("first event bubble Triggered !");
+        });
+
+        document.getElementById("child").addEventListener("click", function() {
+            alert("Button Clicked!");
+        });
+
+        document.getElementById("noEvent").addEventListener("click", function() {
+            alert("event Bubbling Occurred!");
+        });
+        document.querySelector('.noBubble').addEventListener("click", function() {
+            alert("here we go again..... Event Bubbling... !");
+        });
+
+        document.getElementById("checkEBubbling").addEventListener("click", function() {
+            event.stopPropagation();
+            alert("Button Clicked! but no event Bubbling..");
+        });
+
+        document.getElementById("menu").addEventListener("click", function(event) {
+            alert("You clicked: " + event.target.innerText);
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>WINDOW EVENTS</title>
+</head>
+<body>
+    <button class="refreshButt">Refresh Page</button>
+    <script>
+        document.querySelector('.refreshButt').addEventListener('click',function(e){
+            window.location.reload();
+        })
+
+        //  document.DOMContentLoaded - Restore Last Scroll Position
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let savedScroll = localStorage.getItem("scrollPos") || 0;
+            window.scrollTo(0, savedScroll);
+        });
+
+        window.addEventListener("beforeunload", function () {
+            localStorage.setItem("scrollPos", window.scrollY);
+        });
+</script>
+
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 console.log(null > 0)  //false
 console.log(null == 0)  //false
-console.log(null >= 0)  //true
+console.log(null >= 0)  //false
 
 //The Reason is that equality check == and comparisionn  <,>,<=,>= work differently .
 //Comparisions convert null to a number,treating it as 0.

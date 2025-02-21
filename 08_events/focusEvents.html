@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FOCUS EVENTS</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+
+    <script>
+       
+    document.getElementById("nameInput").addEventListener("focus", function() {
+        this.style.backgroundColor = "black"; // Change background on focus
+    this.style.color = 'white';
+});
+    
+    document.getElementById("nameInput").addEventListener("blur", function() {
+        this.style.backgroundColor = ""; // Reset background on blur
+    });
+    </script>
+    
+    
+</body>
+</html>
