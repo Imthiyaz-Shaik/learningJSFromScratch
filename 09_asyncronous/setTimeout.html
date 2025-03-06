@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SET TIMEOUT</title>
+</head>
+<body>
+    <h1 id="heading">IMTHIYAZ AHMAD SHAIK</h1>
+    <button id="PressToKnow">CLICK TO Change</button>
+
+    <script>
+        console.log('they call me,');
+
+        let timeoutId; // Variable to store timeout ID
+
+        const callMe = function () {
+            const heading = document.querySelector('#heading');
+            heading.textContent = 'imthi, innu, immu, and many more';
+            document.querySelector('#PressToKnow').innerText = 'DOUBLE CLICK TO Change';
+        };
+
+        document.querySelector('#PressToKnow').addEventListener('click', function () {
+            timeoutId = setTimeout(callMe, 1000);
+            console.log('imthi, innu, immu, and many more');
+        });
+
+        document.querySelector('#PressToKnow').addEventListener('dblclick', function () {
+            clearTimeout(timeoutId); // Clear the timeout before execution
+            const heading = document.querySelector('#heading');
+            heading.textContent = 'IMTHIYAZ AHMAD SHAIK'; // Reset text
+            console.log('IMTHIYAZ AHMAD SHAIK');
+        });
+    </script>
+</body>
+</html>

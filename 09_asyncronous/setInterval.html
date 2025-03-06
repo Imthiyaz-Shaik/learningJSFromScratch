@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>SET INTERVAL</title>
+</head>
+<body>
+    <ul id="multiples"></ul>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+
+    <script>
+        let intervalId;
+        const start = document.querySelector('#start');
+        const stop = document.querySelector('#stop');
+        start.addEventListener('click', function() {
+            intervalId = setInterval(function() {
+                const multiples = document.querySelector('#multiples');
+                const li = document.createElement('li');
+                li.textContent = Math.random() * 10;
+                multiples.appendChild(li);
+            }, 1000);
+        });
+
+        stop.addEventListener('click', function() {
+            clearInterval(intervalId);
+        });
+    </script>
+</body>
+</html>
